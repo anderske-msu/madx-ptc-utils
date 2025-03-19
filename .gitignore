@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Tests
+/tests/
+# Checking permissions, may be added at a later date
