@@ -16,7 +16,7 @@ def __load_exponent_data(
 
 
 def python_from_ptc(
-    folder: str,
+    folder: typing.Union[str, pathlib.PosixPath],
     int_type: type = np.int32,
     float_type: type = np.float64,
 ) -> typing.Callable:
