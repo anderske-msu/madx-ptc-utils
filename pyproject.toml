@@ -26,5 +26,5 @@ create-ptc-files = "madx_ptc_utils.create_ptc_files:main"
 rm-keyword = "madx_ptc_utils.rm_keyword:main"
 
 [project.urls]
-"Bug Tracker" = "https://github.com/anderske-msu/madx-ptc-utils/issues"
 Homepage = "https://github.com/anderske-msu/madx-ptc-utils"
+"Bug Tracker" = "https://github.com/anderske-msu/madx-ptc-utils/issues"
