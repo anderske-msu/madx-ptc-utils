@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "madx-ptc-utils"
-version = "0.1.2"
+version = "0.1.3"
 description = "Uses MAD-X PTC to convert a MAD-X lattice to a Python object"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.10"
