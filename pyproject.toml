@@ -1,17 +1,17 @@
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "madx-ptc-utils"
-version = "0.1.1"
+version = "0.1.2"
 description = "Uses MAD-X PTC to convert a MAD-X lattice to a Python object"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.10"
 authors = [{ name = "Kelly Anderson", email = "kjanderson24@proton.me" }]
 dependencies = ["cpymad", "numpy"]
 keywords = ["MAD-X", "PTC", "madx", "particle tracking"]
+license = { file = "LICENSE" }
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
