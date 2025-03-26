@@ -33,6 +33,9 @@ def main() -> None:
     parser.add_argument(
         "--sequence_index", type=int, help="Index of sequence in MAD-X file.", default=0
     )
+    parser.add_argument(
+        "--debug", "-d", action="store_true", help="Do not remove files created by PTC."
+    )
     args = parser.parse_args()
 
     source_file = args.madx_file
@@ -268,19 +271,20 @@ def main() -> None:
     np.savetxt(output_folder / "linear_tunes.txt", linear_tunes)
 
     # Remove temporary files
-    fort_18 = filename.as_posix()
-    internal_mag_pot = (filename.parent / "internal_mag_pot.txt").as_posix()
+    if not args.debug:
+        fort_18 = filename.as_posix()
+        internal_mag_pot = (filename.parent / "internal_mag_pot.txt").as_posix()
 
-    command = ["rm", fort_18, internal_mag_pot]
-    subprocess.run(command, check=True)
+        command = ["rm", fort_18, internal_mag_pot]
+        subprocess.run(command, check=True)
 
-    command = ["rm"]
-    for variable in variable_strings:
-        command.append((output_folder / f"ptc_{variable}.txt").as_posix())
+        command = ["rm"]
+        for variable in variable_strings:
+            command.append((output_folder / f"ptc_{variable}.txt").as_posix())
 
-    subprocess.run(command, check=True)
+        subprocess.run(command, check=True)
 
-    print(f'PTC files created successfully at "{output_folder}"')
+        print(f'PTC files created successfully at "{output_folder}"')
 
     return None
 
